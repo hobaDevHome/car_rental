@@ -18,10 +18,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+.navBar-link {
+  @apply hover:bg-blue-500 rounded-xl  hover:text-white p-3 cursor-pointer;
 }
