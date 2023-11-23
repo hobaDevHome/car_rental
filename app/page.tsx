@@ -28,6 +28,14 @@ export default function Home() {
     );
     setcarsList(filteredCarList);
   };
+  const orderCarsList = (order: number) => {
+    console.log("order", order);
+
+    let sortedList = [...originalCarsList].sort((a, b) =>
+      order == -1 ? a.price - b.price : b.price - a.price
+    );
+    setcarsList(sortedList);
+  };
 
   return (
     <div className="p-5 sm:p-10 md:p-20">
@@ -36,6 +44,7 @@ export default function Home() {
       <CarsFilters
         carsList={originalCarsList}
         setselectedBrand={(value: string) => filterBrands(value)}
+        orderCarList={(value: number) => orderCarsList(value)}
       />
       <CarsList carsList={carsList} />
     </div>

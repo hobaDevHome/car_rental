@@ -5,6 +5,9 @@ import { MdOutlineAirlineSeatReclineNormal } from "react-icons/md";
 import { FaGasPump } from "react-icons/fa6";
 
 const CarCard = ({ car }: any) => {
+  if (!car) {
+    return null;
+  }
   return (
     <div className="bg-gray-100 p-4 rounded-lg hover:border border-blue-400 cursor-pointer ">
       <h2 className="text-xl font-bold">{car.name}</h2>

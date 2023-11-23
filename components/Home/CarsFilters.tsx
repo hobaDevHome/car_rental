@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const CarsFilters = ({ carsList, setselectedBrand }: any) => {
+const CarsFilters = ({ carsList, setselectedBrand, orderCarList }: any) => {
   const [brands, setBrands] = useState<any>([]);
 
   useEffect(() => {
@@ -24,12 +24,15 @@ const CarsFilters = ({ carsList, setselectedBrand }: any) => {
         <p>Explore our cars you might likes</p>
       </div>
       <div className=" gap-3 hidden md:flex">
-        <select className="select select-bordered w-full max-w-xs">
+        <select
+          className="select select-bordered w-full max-w-xs"
+          onChange={(e) => orderCarList(e.target.value)}
+        >
           <option disabled selected>
-            Who shot first?
+            Price
           </option>
-          <option>Han Solo</option>
-          <option>Greedo</option>
+          <option value={-1}>Min to Max</option>
+          <option value={1}>Max to Min</option>
         </select>
         <select
           className="select select-bordered w-full max-w-xs"

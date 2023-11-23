@@ -29,3 +29,16 @@ export const getCarsList = async () => {
   const result = await request(queryURL, query);
   return result;
 };
+
+export const getStoresLocations = async () => {
+  const query = gql`
+    query StoreLocations {
+      storeLocations {
+        address
+      }
+    }
+  `;
+
+  const result = await request(queryURL, query);
+  return result;
+};
